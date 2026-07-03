@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swagatika Rath | Web Developer</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2,
+        #ff6b6b,
+        #feca57
+    );
+    background-size:400% 400%;
+    animation:gradientMove 10s ease infinite;
+    padding:20px;
+}
+
+@keyframes gradientMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    max-width:850px;
+    width:100%;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:25px;
+    padding:40px;
+    text-align:center;
+    color:white;
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+
+.profile-img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid white;
+    margin-bottom:20px;
+    transition:0.4s;
+}
+
+.profile-img:hover{
+    transform:scale(1.08) rotate(5deg);
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.highlight{
+    color:#ffe66d;
+}
+
+.tagline{
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+p{
+    line-height:1.8;
+    font-size:18px;
+}
+
+.skills{
+    margin-top:25px;
+}
+
+.skill{
+    display:inline-block;
+    background:rgba(255,255,255,0.2);
+    padding:10px 18px;
+    margin:5px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.main-img{
+    width:100%;
+    max-width:600px;
+    border-radius:15px;
+    margin:25px 0;
+    transition:0.4s;
+}
+
+.main-img:hover{
+    transform:scale(1.03);
+}
+
+a{
+    color:#ffe66d;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+button{
+    margin-top:20px;
+    padding:14px 28px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:17px;
+    font-weight:bold;
+    color:white;
+    background:linear-gradient(45deg,#ff6b6b,#ff9f43);
+    transition:0.4s;
+}
+
+button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-content{
+    background:white;
+    color:#333;
+    width:80%;
+    max-width:500px;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    animation:pop 0.4s ease;
+}
+
+@keyframes pop{
+    from{
+        transform:scale(0.5);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.close{
+    background:#667eea;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <img
+    class="profile-img"
+    src="C:\Users\swaga\OneDrive\Pictures\Camera Roll\swagatika.jpeg"
+    alt="Profile">
+
+    <h1>Hello, I'm <span class="highlight">Swagatika Rath</span></h1>
+
+    <div class="tagline">
+        Aspiring Web Developer
+    </div>
+
+    <p>
+        Hi, I'm Swagatika Rath, an aspiring Web Developer passionate
+        about creating clean, responsive, and user-friendly websites.
+        I am currently pursuing a Web Development Internship at ApexPlanet,
+        where I work on real-world projects and continuously improve my
+        skills in HTML, CSS, JavaScript, and modern web technologies.
+        I enjoy learning new things, solving problems, and turning creative
+        ideas into functional web experiences.
+    </p>
+
+    <div class="skills">
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Responsive Design</span>
+        <span class="skill">Web Development</span>
+    </div>
+
+    <img
+    class="main-img"
+    src="https://apexplanet.in/internship/assets/img/intern_reg_form.png"
+    alt="ApexPlanet">
+
+    <p>
+        For Registration:
+        <a href="https://apexplanet.in/internship/registration" target="_blank">
+            Click Here
+        </a>
+    </p>
+
+    <button onclick="showMessage()">
+        Click Me
+    </button>
+
+</div>
+
+<div class="modal" id="popup">
+    <div class="modal-content">
+
+        <h2>Thank You ApexPlanet </h2>
+
+        <p>
+            I sincerely thank ApexPlanet for providing me with the
+            opportunity to learn, grow, and gain practical experience
+            in Web Development. This internship has strengthened my
+            technical skills and boosted my confidence as a developer.
+        </p>
+
+        <button class="close" onclick="closeModal()">
+            Close
+        </button>
+
+    </div>
+</div>
+
+<script>
+
+function showMessage() {
+
+    alert(
+        "I would like to thank ApexPlanet for providing me with the opportunity to learn, grow, and gain practical experience in Web Development.\n\nThis internship has been an important step in my journey toward becoming a skilled developer."
+    );
+
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("popup").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
